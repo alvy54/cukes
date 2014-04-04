@@ -13,4 +13,4 @@ Feature: Search
     | Max Price     | 500,000   |
     When I click on search
     Then I get listing numbers in the results
-    And I get results in the State and Suburb I specified  
+    And I get results in the State and Suburb I specified
