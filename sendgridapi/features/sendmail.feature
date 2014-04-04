@@ -19,7 +19,7 @@ Feature: Send mail API
     | fromname | Alvin                    |
     | replyto  | alvin.fajardo@gmail.com  |
     | date     | Thu, 1 Apr 2014 12:00:00 |
-    | files[test.txt] | test.txt |
+    | files[test.txt] | attachments/test.txt |
     | content  | 1234 |
     | headers  | {"X-Accept-Language": "en", "X-Mailer": "MyApp"} |
     When I call the API 
