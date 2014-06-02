@@ -13,16 +13,16 @@ end
 Then(/^I end up on the correct landing page$/) do
   if @headerlink == "Commercial"
     page.driver.browser.switch_to.window(page.driver.browser.window_handles.last)
-    current_url.should == "http://www.realcommercial.com.au/for-sale"
+    expect(current_url).to eq("http://www.realcommercial.com.au/for-sale")
   elsif @headerlink == "New homes"
-    current_url.index(Capybara.app_host + "/new-homes/").should == 0
+    expect(current_url.index(Capybara.app_host + "/new-homes/")).to eq(0)
   elsif @headerlink == "Find agents"
-    current_url.should == Capybara.app_host + "/find-agent"
+    expect(current_url).to eq(Capybara.app_host + "/find-agent")
   elsif @headerlink == "Home ideas"
-    current_url.should == Capybara.app_host + "/home-ideas/"
+    expect(current_url).to eq(Capybara.app_host + "/home-ideas/")
   elsif @headerlink == "Sign In"
-    current_url.should == Capybara.app_host + "/my-real-estate/login"
+    expect(current_url).to eq(Capybara.app_host + "/my-real-estate/login")
   else
-    current_url.index(Capybara.app_host + "/" + @headerlink.downcase).should == 0
+    expect(current_url.index(Capybara.app_host + "/" + @headerlink.downcase)).to eq(0)
   end
 end
